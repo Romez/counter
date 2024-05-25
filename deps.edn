@@ -1,11 +1,13 @@
 {:paths ["src" "java"]
 
  :deps
- {org.clojure/clojure {:mvn/version "1.11.3"}}
+ {org.clojure/clojure                {:mvn/version "1.11.3"}
+  uk.co.electronstudio.jaylib/jaylib {:mvn/version "5.0.0-0"}}
 
  :aliases
  {;; Run with clj -T:build function-in-build
-  :build       {:deps       {io.github.clojure/tools.build {:git/tag "v0.10.3" :git/sha "15ead66"}}
-                :ns-default build}
-  :dev {:extra-paths ["dev" "target/classes"]}
+  :build {:deps       {io.github.clojure/tools.build {:git/tag "v0.10.3" :git/sha "15ead66"}}
+          :ns-default build}
+  :dev   {:extra-paths ["dev"]
+          :jvm-opts    ["-XstartOnFirstThread" "-Djava.awt.headless=true"]}
   }}

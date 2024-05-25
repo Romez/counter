@@ -32,7 +32,6 @@
 
 (defn uber [_]
   (clean nil)
-  (java nil)
   (b/copy-dir {:src-dirs ["src" "resources"]
                :target-dir class-dir})
   (b/compile-clj {:basis @basis
@@ -42,5 +41,3 @@
            :uber-file uber-file
            :basis @basis
            :main 'counter.app}))
-
-
