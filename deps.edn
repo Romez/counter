@@ -1,0 +1,11 @@
+{:paths ["src" "java"]
+
+ :deps
+ {org.clojure/clojure {:mvn/version "1.11.3"}}
+
+ :aliases
+ {;; Run with clj -T:build function-in-build
+  :build       {:deps       {io.github.clojure/tools.build {:git/tag "v0.10.3" :git/sha "15ead66"}}
+                :ns-default build}
+  :dev {:extra-paths ["dev" "target/classes"]}
+  }}
